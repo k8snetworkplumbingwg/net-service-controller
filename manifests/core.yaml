@@ -1,0 +1,8 @@
+apiVersion: svcctl.metaswitch.com/v1alpha1
+kind: NetService
+metadata:
+  name: corens
+spec:
+  netAttachDef: core
+  selector:
+    app: utils

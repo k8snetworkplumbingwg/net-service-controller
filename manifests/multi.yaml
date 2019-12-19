@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: utils
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: utils
+  template:
+    metadata:
+      labels:
+        app: utils
+      annotations:
+        k8s.v1.cni.cncf.io/networks: |-
+          [
+            {"name": "core", "namespace": "networks", "interface": "core"},
+            {"name": "access", "namespace": "networks", "interface": "access"}
+          ]
+    spec:
+      containers:
+      - image: metaswitchglobal.azurecr.io/plw/utils:latest
+        name: utils

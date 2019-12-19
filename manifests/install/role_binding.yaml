@@ -1,0 +1,11 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: svcctl
+subjects:
+- kind: ServiceAccount
+  name: svcctl
+roleRef:
+  kind: Role
+  name: svcctl
+  apiGroup: rbac.authorization.k8s.io
