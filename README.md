@@ -1,30 +1,31 @@
 # NetworkService controller
 
-This is a multus aware service controller.
+This is a Multus aware service controller, allowing the creation of headless
+services on Multus additional networks.
 
-*This is a temporary home for it, until it has been moved to a permanent with a
-proper license.*
+*This is a temporary home for it, until it has been moved to a permanent home.*
 
 ## Build
+
+*You do not need to build the project unless you want to change the code.*
 
 This project uses the operator-sdk, which you must have installed
 locally. Build instructions are contained [here](docs/build.md).
 
-Since there are no publicly available images (yet), you must build and push
-images before you can install.
-
 ## Installation
 
-To install, after building and pushing, edit the `image:` in
-[manifests/install/operator.yaml](manifests/install/operator.yaml), and then
-install as follows.
+Install as follows (after building and pushing if you have changed the code).
 
     kubectl apply -f manifest/install
 
 ## Usage
 
 Sample `NetService` objects are contained in the [manifests](manifests)
-directory. Each such object has the following fields.
+directory, together with a sample multi-network deployment
+([manifests/multi.yaml](manifests/multi.yaml)). These assume networks named
+`core` and `access` have been created and multus is installed in the cluster.
+
+. Each such object has the following fields.
 
 - The name of the `NetService` object is the name of the resulting service that
   will be created.

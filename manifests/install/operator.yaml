@@ -16,7 +16,7 @@ spec:
       containers:
         - name: svcctl
           # Replace this with the built image name
-          image: metaswitchglobal.azurecr.io/plw/svcctl-operator:latest
+          image: plwhite/svcctl-operator:latest
           command:
           - svcctl
           imagePullPolicy: Always

@@ -19,5 +19,6 @@ spec:
           ]
     spec:
       containers:
-      - image: metaswitchglobal.azurecr.io/plw/utils:latest
+      - image: ubuntu:latest
         name: utils
+        command: ["tail", "-f", "/dev/null"]
